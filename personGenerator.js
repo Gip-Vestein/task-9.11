@@ -20,7 +20,6 @@ const personGenerator = {
             "id_16": "Морозов"
         }
     }`,
-
     firstNameMaleJson: `{
         "count": 10,
         "list": {     
@@ -53,6 +52,7 @@ const personGenerator = {
         }
     }`,
 
+
     patronymicJson: `{
         "count": 10,
         "list": {     
@@ -69,6 +69,7 @@ const personGenerator = {
         }
     }`,
 
+
     maleProfessionJson: `{
         "count": 5,
         "list": {     
@@ -80,6 +81,7 @@ const personGenerator = {
         }
     }`,
 
+
     femaleProfessionJson: `{
         "count": 5,
         "list": {     
@@ -90,6 +92,7 @@ const personGenerator = {
             "id_5": "Химик"
         }
     }`,
+
 
     monthJson: `{
         "count": 12,
@@ -108,6 +111,7 @@ const personGenerator = {
             "id_12": "Декабря"
         }
     }`,
+
 
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
@@ -133,8 +137,8 @@ const personGenerator = {
 
     },
     
-    randomBirthYear(){
-        let year=this.randomIntNumber(2022,1900);
+    randomBirthDate(){
+        let year=this.randomIntNumber(2020,1900);
         let month=this.randomValue(this.monthJson);
         let day;
         if(month=='Апреля'||'Июня'||'Сентября'||'Ноября'){
@@ -152,9 +156,8 @@ const personGenerator = {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.name = this.randomName(this.person.gender);
-        this.person.birthYear=this.randomBirthYear();
+        this.person.birthDate=this.randomBirthDate();
         return this.person;
     }
 };
-
    
